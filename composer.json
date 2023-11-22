@@ -1,0 +1,35 @@
+{
+    "name": "theme-starter/signature",
+    "description": "A light-weight and simple WordPress theme boilerplate using an Object Oriented approach.",
+    "type": "wordpress-theme",
+    "keywords": ["WordPress", "Boilerplate", "Theme", "OOP"],
+    "homepage": "https://github.com/smrafiz/signature",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "SM Rafiz",
+            "email": "s.m.rafiz@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/smrafiz/signature/issues",
+        "source": "https://github.com/smrafiz/signature"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThemeStarter\\Signature\\": "./includes"
+        }
+    },
+    "require-dev": {
+        "wp-cli/i18n-command": "^2.4.4"
+    },
+    "scripts": {
+        "cs": "phpcs --standard=phpcs.xml --report-full=error-report.txt --report-summary=error-summary.txt .",
+        "cbf": "phpcbf --standard=phpcs.xml .",
+        "phpcs": "phpcs --standard=phpcs.xml",
+        "make-pot": "wp i18n make-pot . languages/signature.pot"
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}

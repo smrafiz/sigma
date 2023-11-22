@@ -1,0 +1,87 @@
+/*!
+Theme Name: Easy Docs
+Theme URI: https://sigmadevs.com/
+Author: Sigma Devs
+Author URI: https://sigmadevs.com/
+Description: A Simple Documentation WordPress Theme
+Version: 1.0.0
+Tested up to: 6.4
+Requires PHP: 7.4
+Requires at least: 5.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: easy-docs
+Domain Path: /languages
+Namespace: ThemeStarter\Signature
+Tags: docs, documentation, theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Easy Docs is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+# Utilities
+	- Accessibility
+	- Alignments
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# Layouts
+# plugins
+	- Jetpack infinite scroll
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/_abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+@import "generic/_generic";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/_base";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/_utilities";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/_components";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "layouts/_layouts";
+
+/*--------------------------------------------------------------
+# Compatibilities
+--------------------------------------------------------------*/
+@import "compatibilities/_compatibilities";

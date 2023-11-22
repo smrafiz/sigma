@@ -1,0 +1,27 @@
+/*!
+Theme Name: Signature
+Theme URI: https://github.com/smrafiz/signature/
+Author: SM Rafiz
+Author URI: https://github.com/smrafiz/signature/
+Description: A light-weight and simple WordPress theme boilerplate using an Object Oriented approach.
+Version: 1.0.0
+Tested up to: 6.4
+Requires PHP: 7.4
+Requires at least: 5.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: signature
+Domain Path: /languages
+Namespace: ThemeStarter\Signature
+Tags: blog, custom-logo, portfolio, e-commerce, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, footer-widgets, theme-options, editor-style, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Easy Docs is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Resource Licenses:
+Font Awesome: https://fontawesome.com/license/free
+Superfish   : https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
+Swiper      : https://github.com/nolimits4web/swiper/blob/master/LICENSE
+Normalize   : https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+*/

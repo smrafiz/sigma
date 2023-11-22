@@ -1,0 +1,76 @@
+{
+  "name": "signature",
+  "version": "1.0.0",
+  "description": "A light-weight and simple WordPress theme boilerplate using an Object Oriented approach.",
+  "main": "index.js",
+  "keywords": [
+    "WordPress",
+    "Boilerplate",
+    "Theme",
+    "OOP"
+  ],
+  "author": "SM Rafiz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smrafiz/signature"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@wordpress/eslint-plugin": "^17.3.0",
+    "@wordpress/prettier-config": "^3.3.0",
+    "archiver": "^6.0.1",
+    "cli-color": "^2.0.3",
+    "emojic": "^1.1.17",
+    "eslint": "^8.54.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "fs-extra": "^11.1.1",
+    "laravel-mix": "^6.0.49",
+    "postcss": "^8.4.31",
+    "normalize-scss": "^8.0.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "stylelint": "^15.11.0",
+    "stylelint-scss": "^5.3.1",
+    "wp-pot": "^1.10.2"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production && npm run cleanmap",
+    "production": "mix --production",
+    "package": "npm run clean && npm run dev && npm run prod && npm run dev --package",
+    "clean": "rm -rf tmp/*",
+    "cleanmap": "rm -rf assets/**/*.map",
+    "zip": "npm run package && npm run prod --zip",
+    "eslint": "eslint src/js/**/*.js",
+    "eslint:fix": "eslint src/js/**/*.js --fix",
+    "stylelint": "stylelint src/sass/**/**/*.{css,scss}",
+    "stylelint:fix": "stylelint src/sass/**/**/*.{css,scss} --fix",
+    "prettier": "prettier src/js/**/*.js",
+    "prettier:fix": "prettier --write src/js/**/*.jsx",
+    "translate": "wp-pot --src '**/**/**/*.php' --dest-file 'languages/signature.pot' --package 'signature' --domain 'signature' --last-translator 'SM Rafiz <s.m.rafiz@gmail.com>' --team 'SM Rafiz <s.m.rafiz@gmail.com>' --bug-report 'https://github.com/smrafiz/signature/issues'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./.eslintrc.js"
+    ]
+  },
+  "prettier": "./.prettierrc.js",
+  "stylelint": {
+    "ignoreFiles": [
+      "./assets/**/*.css",
+      "./vendor/**/**/*.css",
+      "./node_modules/**/**/*.css",
+      "./tests/**/**/*.css",
+      "./dist/**/**/*.css"
+    ],
+    "extends": [
+      "./.stylelintrc.js"
+    ]
+  }
+}
