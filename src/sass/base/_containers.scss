@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------
+# c00 - Base - Containers
+--------------------------------------------------------------*/
+
+@use "../abstracts" as *;
+
+.container,
+.container-fluid,
+.container-narrow {
+	width: 100%;
+	max-inline-size: 100%;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	padding-inline-start: $gutter_half;
+	padding-inline-end: $gutter_half;
+}
+
+@each $breakpoint, $container in $containers {
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+	.container {
+		@include media-only($breakpoint) {
+			max-inline-size: $container;
+		}
+	}
+}
+
+.container-fluid {
+	max-width: 100%;
+}
+
+.container-narrow {
+	max-width: map-get($containers, lg);
+}

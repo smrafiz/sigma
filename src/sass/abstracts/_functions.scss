@@ -1,0 +1,10 @@
+//---------------------------------
+// Functions
+//---------------------------------
+
+@use "sass:math";
+
+@function calculateRem($size) {
+	$remSize: math.div($size, 16px);
+	@return $remSize * 1rem;
+}

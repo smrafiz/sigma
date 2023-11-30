@@ -1,8 +1,8 @@
 <?php
 /**
- * Backend Class: Enqueue
+ * Frontend Class: Enqueue
  *
- * This class enqueues required styles & scripts in the admin pages.
+ * This class enqueues required styles & scripts in the frontend.
  *
  * @package ThemeStarter\Signature
  * @since   1.0.0
@@ -10,7 +10,7 @@
 
 declare( strict_types=1 );
 
-namespace ThemeStarter\Signature\App\Backend;
+namespace ThemeStarter\Signature\App\Frontend;
 
 use ThemeStarter\Signature\Common\{
 	Traits\Singleton,
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Backend Class: Enqueue
+ * Frontend Class: Enqueue
  *
  * @since 1.0.0
  */
@@ -40,31 +40,22 @@ class Enqueue extends EnqueueBase {
 	/**
 	 * Registers the class.
 	 *
-	 * This backend class is only being instantiated in the backend
+	 * This backend class is only being instantiated in the frontend
 	 * as requested in the Bootstrap class.
 	 *
 	 * @return void
 	 * @since 1.0.0
 	 *
 	 * @see Bootstrap::registerServices
-	 * @see Requester::isAdminBackend()
+	 * @see Requester::isFrontend()
 	 */
 	public function register() {
-		global $pagenow;
-
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
-
-		if ( 'themes.php' === $pagenow && 'signature' === $page ) {
-			$this->assets();
-
-			// Bail if no assets.
-			if ( empty( $this->assets() ) ) {
-				return;
-			}
-
-			add_action( 'admin_enqueue_scripts', [ $this, 'enqueue' ] );
+		// Bail if no assets.
+		if ( empty( $this->assets() ) ) {
+			return;
 		}
+
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
 	}
 
 	/**
@@ -77,16 +68,12 @@ class Enqueue extends EnqueueBase {
 		$styles = [];
 
 		$styles[] = [
-			'handle' => 'thickbox',
-		];
-
-		$styles[] = [
-			'handle'    => 'signature-admin-styles',
-			'asset_uri' => esc_url( $this->theme->assetsUri() . '/css/backend' . $this->suffix . '.css' ),
+			'handle'    => 'signature-frontend-styles',
+			'asset_uri' => esc_url( $this->theme->assetsUri() . '/css/frontend' . $this->suffix . '.css' ),
 			'version'   => $this->theme->version(),
 		];
 
-		$this->enqueues['style'] = apply_filters( 'signature_registered_admin_styles', $styles, 10, 1 );
+		$this->enqueues['style'] = apply_filters( 'signature_registered_frontend_styles', $styles, 10, 1 );
 
 		return $this;
 	}
@@ -101,14 +88,14 @@ class Enqueue extends EnqueueBase {
 		$scripts = [];
 
 		$scripts[] = [
-			'handle'     => 'signature-admin-script',
-			'asset_uri'  => esc_url( $this->theme->assetsUri() . '/js/backend' . $this->suffix . '.js' ),
+			'handle'     => 'signature-frontend-script',
+			'asset_uri'  => esc_url( $this->theme->assetsUri() . '/js/frontend' . $this->suffix . '.js' ),
 			'dependency' => [ 'jquery' ],
 			'in_footer'  => true,
 			'version'    => $this->theme->version(),
 		];
 
-		$this->enqueues['script'] = apply_filters( 'signature_registered_admin_scripts', $scripts, 10, 1 );
+		$this->enqueues['script'] = apply_filters( 'signature_registered_frontend_scripts', $scripts, 10, 1 );
 
 		return $this;
 	}
@@ -134,13 +121,11 @@ class Enqueue extends EnqueueBase {
 	 */
 	private function localizeData() {
 		return [
-			'handle' => 'signature-admin-script',
-			'object' => 'signatureAdminParams',
+			'handle' => 'signature-frontend-script',
+			'object' => 'signatureFrontendParams',
 			'data'   => [
-				'ajaxUrl'    => esc_url( Helpers::ajaxUrl() ),
-				'homeUrl'    => esc_url( home_url( '/' ) ),
-				'restApiUrl' => esc_url_raw( rest_url() ),
-				'restNonce'  => wp_create_nonce( 'wp_rest' ),
+				'ajaxUrl' => esc_url( Helpers::ajaxUrl() ),
+				'homeUrl' => esc_url( home_url( '/' ) ),
 			],
 		];
 	}

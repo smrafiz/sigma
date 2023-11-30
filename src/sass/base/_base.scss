@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+# c00 - Base - Global
+--------------------------------------------------------------*/
+
+@forward "./placeholders";
+
+:root {
+	/* Default Colors */
+	--signature-text-color: #242545;
+	--signature-primary-color: #738ff4;
+	--signature-secondary-color: #fc346c;
+	--signature-tertiary-color: #fccc6c;
+	--signature-offset-color: #eff5fc;
+	--signature-border-color: #dddddd;
+
+	/* Default Fonts */
+	--signature-body-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+	--signature-heading-font: 'Source Sans Pro', sans-serif;
+
+	/* Default Spacings */
+	--signature-gutter: 3.125em;
+	--signature-gutter-full: var(--signature-gutter);
+	--signature-gutter-half: calc(var(--signature-gutter-full) / 2);
+	--signature-gutter-expand-factor: 1.6;
+
+	/* Default Transition */
+	--signature-transition-all: all 700ms cubic-bezier(0.2, 1, 0.22, 1);
+	--signature-transition-property: all;
+	--signature-transition-duration: 700ms;
+	--signature-transition-duration-slow: 1200ms;
+	--signature-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

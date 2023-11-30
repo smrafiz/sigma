@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# c00 - Base - Grid
+--------------------------------------------------------------*/
+
+@use '../abstracts' as *;
+
+@each $breakpoint, $width in $breakpoints {
+	@if $breakpoint != 'xs' {
+		@include media-only($width) {
+			@for $i from 1 through $columns {
+				.col-#{$breakpoint}-#{$i} {
+					grid-column: span #{$i};
+				}
+			}
+		}
+	} @else {
+		@for $i from 1 through $columns {
+			.col-#{$breakpoint}-#{$i} {
+				grid-column: span #{$i};
+			}
+		}
+	}
+}

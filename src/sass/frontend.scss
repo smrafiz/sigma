@@ -2,11 +2,12 @@
 
 TABLE OF CONTENTS:
 
-	c00 - Base - Global
-	c01 - Base - WordPress Default
-	c02 - Base - Typography
-	c03 - Base - Helpers
-	c04 - Base - Colors
+	c00 - Base - Reset
+	c01 - Base - Global
+	c02 - Base - WordPress Default
+	c03 - Base - Typography
+	c04 - Base - Helpers
+	c05 - Base - Colors
 
 	c10 - Components Section
 
@@ -34,7 +35,5 @@ TABLE OF CONTENTS:
 
 ******************************/
 
-/*--------------------------------------------------------------
-# Import Modules
---------------------------------------------------------------*/
-@import '~normalize-scss/sass/normalize/import-now';
+@use "base";
+@use "themes";

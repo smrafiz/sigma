@@ -25,3 +25,574 @@ Superfish   : https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.tx
 Swiper      : https://github.com/nolimits4web/swiper/blob/master/LICENSE
 Normalize   : https://github.com/necolas/normalize.css/blob/master/LICENSE.md
 */
+
+/******************************
+
+TABLE OF CONTENTS:
+
+	c00 - Base - Reset
+	c01 - Base - Global
+	c02 - Base - WordPress Default
+	c03 - Base - Typography
+	c04 - Base - Helpers
+	c05 - Base - Colors
+
+	c10 - Components Section
+
+	c20 - Layout - Header
+	c21 - Layout - Footer
+	c22 - Layout - Various Sliders
+	c23 - Layout - Clients
+	c24 - Layout - Newsletter
+	c25 - Layout - Shop
+	c26 - Layout - Single Product
+	c27 - Layout - Cart Page
+	c28 - Layout - Checkout
+	c29 - Layout - My Account
+	c30 - Layout - Login / Register
+	c31 - Layout - Wishlist & Compare
+	c32 - Layout - Blog
+	c32 - Layout - Blog Details
+	c33 - Layout - Boxed
+	c34 - Layout - Fluid
+	c35 - Layout - About Page
+	c36 - Layout - Contact Page
+	c37 - Layout - FAQs Page
+	c38 - Layout - 404 Page
+	c39 - Layout - Modal
+
+******************************/
+/*--------------------------------------------------------------
+# c00 - Base - Reset
+--------------------------------------------------------------*/
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+}
+
+/**
+ * Add the correct display in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	-webkit-text-decoration: underline dotted;
+	text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ */
+button {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+	-webkit-appearance: button;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+	/**
+	 * Remove the inner border and padding in Firefox.
+	 */
+	/**
+	 * Restore the focus styles unset by the previous rule.
+	 */
+}
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Show the overflow in Edge.
+ */
+input {
+	overflow: visible;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+	/**
+	 * Remove the inner padding in Chrome and Safari on macOS.
+	 */
+}
+[type=search]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; /* 1 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	color: inherit; /* 2 */
+	white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/**
+ * Extra reset CSS.
+ */
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		-webkit-animation-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		-webkit-transition-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+.mb-full {
+	-webkit-margin-after: var(--signature-gutter-full) !important;
+	margin-block-end: var(--signature-gutter-full) !important;
+}
+
+.pos-abs {
+	position: absolute;
+}
+
+.type-block {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# c00 - Base - Global
+--------------------------------------------------------------*/
+:root {
+	/* Default Colors */
+	--signature-text-color: #242545;
+	--signature-primary-color: #738ff4;
+	--signature-secondary-color: #fc346c;
+	--signature-tertiary-color: #fccc6c;
+	--signature-offset-color: #eff5fc;
+	--signature-border-color: #dddddd;
+	/* Default Fonts */
+	--signature-body-font: "Open Sans", "Helvetica Neue", sans-serif;
+	--signature-heading-font: "Source Sans Pro", sans-serif;
+	/* Default Spacings */
+	--signature-gutter: 3.125em;
+	--signature-gutter-full: var(--signature-gutter);
+	--signature-gutter-half: calc(var(--signature-gutter-full) / 2);
+	--signature-gutter-expand-factor: 1.6;
+	/* Default Transition */
+	--signature-transition-all: all 700ms cubic-bezier(0.2, 1, 0.22, 1);
+	--signature-transition-property: all;
+	--signature-transition-duration: 700ms;
+	--signature-transition-duration-slow: 1200ms;
+	--signature-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+}
+
+html {
+	font-size: 62.5%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*--------------------------------------------------------------
+# c00 - Base - Containers
+--------------------------------------------------------------*/
+.container,
+.container-fluid,
+.container-narrow {
+	width: 100%;
+	-webkit-margin-start: auto;
+	margin-inline-start: auto;
+	-webkit-margin-end: auto;
+	margin-inline-end: auto;
+	-webkit-padding-start: var(--signature-gutter-half);
+	padding-inline-start: var(--signature-gutter-half);
+	-webkit-padding-end: var(--signature-gutter-half);
+	padding-inline-end: var(--signature-gutter-half);
+}
+
+.container {
+	max-inline-size: 100%;
+}
+@media only screen and (min-width: 576px) {
+	.container {
+		max-inline-size: 54rem;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.container {
+		max-inline-size: 72rem;
+	}
+}
+@media only screen and (min-width: 1025px) {
+	.container {
+		max-inline-size: 96rem;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-inline-size: 114rem;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	.container {
+		max-inline-size: 132rem;
+	}
+}
+
+.container-fluid {
+	max-width: 100%;
+}
+
+.container-narrow {
+	max-width: 1025px;
+}
+
+/*--------------------------------------------------------------
+# c100 - Themes - Default
+--------------------------------------------------------------*/
+body {
+	background-color: #fff;
+}
+
+/*# sourceMappingURL=frontend.min.css.map*/

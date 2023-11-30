@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-	<main id="primary" class="site-main">
+	<main id="primary" class="container site-main">
 		<?php
 		if ( have_posts() ) {
 			if ( is_home() && ! is_front_page() ) {

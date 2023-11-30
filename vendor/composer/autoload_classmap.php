@@ -280,6 +280,7 @@ return array(
     'Symfony\\Component\\Finder\\Iterator\\VcsIgnoredFilterIterator' => $vendorDir . '/symfony/finder/Iterator/VcsIgnoredFilterIterator.php',
     'Symfony\\Component\\Finder\\SplFileInfo' => $vendorDir . '/symfony/finder/SplFileInfo.php',
     'ThemeStarter\\Signature\\App\\Backend\\Enqueue' => $baseDir . '/includes/App/Backend/Enqueue.php',
+    'ThemeStarter\\Signature\\App\\Frontend\\Enqueue' => $baseDir . '/includes/App/Frontend/Enqueue.php',
     'ThemeStarter\\Signature\\App\\General\\Hooks' => $baseDir . '/includes/App/General/Hooks.php',
     'ThemeStarter\\Signature\\App\\Rest\\RestEndpoints' => $baseDir . '/includes/App/Rest/RestEndpoints.php',
     'ThemeStarter\\Signature\\Bootstrap' => $baseDir . '/includes/Bootstrap.php',

@@ -22,11 +22,11 @@ mix.options({
 	processCssUrls: false,
 });
 
-// mix.webpackConfig({
-// 	stats: {
-// 		children: true,
-// 	},
-// });
+mix.webpackConfig({
+	stats: {
+		children: true,
+	},
+});
 
 if (process.env.npm_config_package) {
 	mix.then(function () {

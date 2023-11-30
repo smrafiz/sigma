@@ -1,0 +1,17 @@
+//---------------------------------
+// Placeholders
+//---------------------------------
+
+@use "../abstracts" as *;
+
+.mb-full {
+	margin-block-end: $gutter !important;
+}
+
+.pos-abs {
+	position: absolute;
+}
+
+.type-block {
+	display: block;
+}

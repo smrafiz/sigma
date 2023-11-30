@@ -378,6 +378,7 @@ class ComposerStaticInit0161a34e46ac7826615c9297de4095a1
         'Symfony\\Component\\Finder\\Iterator\\VcsIgnoredFilterIterator' => __DIR__ . '/..' . '/symfony/finder/Iterator/VcsIgnoredFilterIterator.php',
         'Symfony\\Component\\Finder\\SplFileInfo' => __DIR__ . '/..' . '/symfony/finder/SplFileInfo.php',
         'ThemeStarter\\Signature\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/includes/App/Backend/Enqueue.php',
+        'ThemeStarter\\Signature\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/includes/App/Frontend/Enqueue.php',
         'ThemeStarter\\Signature\\App\\General\\Hooks' => __DIR__ . '/../..' . '/includes/App/General/Hooks.php',
         'ThemeStarter\\Signature\\App\\Rest\\RestEndpoints' => __DIR__ . '/../..' . '/includes/App/Rest/RestEndpoints.php',
         'ThemeStarter\\Signature\\Bootstrap' => __DIR__ . '/../..' . '/includes/Bootstrap.php',

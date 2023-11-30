@@ -1,0 +1,67 @@
+//---------------------------------
+// Grid
+//---------------------------------
+$columns: 12;
+$gutter: var(--signature-gutter-full);
+$gutter_half: var(--signature-gutter-half);
+$gutter_expand_factor: var(--signature-gutter-expand-factor);
+$spacing: 30;
+
+//---------------------------------
+// Colors
+//---------------------------------
+$text: var(--signature-text-color);
+$primary: var(--signature-primary-color);
+$secondary: var(--signature-secondary-color);
+$tertiary: var(--signature-tertiary-color);
+$offset: var(--signature-offset-color);
+$border: var(--signature-border-color);
+$white: #fff;
+$black: #000;
+
+//---------------------------------
+// Typography
+//---------------------------------
+$body_font: var(--signature-body-font);
+$heading_font: var(--signature-heading-font);
+$body_fs: 1.8rem;
+
+//---------------------------------
+// Animations
+//---------------------------------
+$time: var(--signature-transition-duration);
+$time_slow: var(--signature-transition-duration-slow);
+$timing_property: var(--signature-transition-property);
+
+$swing: cubic-bezier(0.55, 0, 0.1, 1);
+$swift: cubic-bezier(0.4, 0, 0.2, 1);
+$ease: var(--signature-transition-timing-function);
+
+$transition-default: $timing_property $time $ease;
+
+//---------------------------------
+// Media Queries
+//---------------------------------
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 1025px;
+$xl: 1200px;
+$xxl: 1440px;
+
+$containers: (
+	sm: 54rem,
+	md: 72rem,
+	lg: 96rem,
+	xl: 114rem,
+	xxl: 132rem,
+);
+
+$breakpoints: (
+	'xs': $xs,
+	'sm': $sm,
+	'md': $md,
+	'lg': $lg,
+	'xl': $xl,
+	'xxl': $xxl
+);
