@@ -1,0 +1,25 @@
+/*--------------------------------------------------------------
+# c00 - Base - Colors
+--------------------------------------------------------------*/
+
+@use "../abstracts" as *;
+
+.color-white {
+	color: $white;
+}
+
+.bgc-primary {
+	background-color: $primary;
+}
+
+.bgc-secondary {
+	background-color: $secondary;
+}
+
+.bgc-white {
+	background-color: $white;
+}
+
+.bgc-offset {
+	background-color: $offset;
+}

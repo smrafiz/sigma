@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------
+# c00 - Base - Utilities
+--------------------------------------------------------------*/
+
+@use "../abstracts" as *;
+
+.mb-0 {
+	margin-block-end: 0;
+}
+
+.mt-full {
+	margin-block-start: var(--signature-gutter-full);
+}
+
+.mb-full {
+	margin-block-end: var(--signature-gutter-full);
+}
+
+.mt-half {
+	margin-block-start: var(--signature-gutter-half);
+}
+
+.mb-half {
+	margin-block-end: var(--signature-gutter-half);
+}
+
+.pt-full {
+	padding-block-start: var(--signature-gutter-full);
+}
+
+.pb-full {
+	padding-block-end: var(--signature-gutter-full);
+}
+
+.pt-half {
+	padding-block-start: var(--signature-gutter-half);
+}
+
+.pb-half {
+	padding-block-end: var(--signature-gutter-half);
+}
+
+.static-element {
+	position: static;
+}
+
+.relative-element {
+	position: relative;
+}
+
+.absolute-element {
+	position: absolute;
+}
+
+.fixed-element {
+	position: fixed;
+}
+
+.d-none {
+	display: none;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.d-block {
+	display: block;
+}
+
+@each $breakpoint, $value in $breakpoints {
+	@media (min-width: $value) {
+		.d-#{$breakpoint}-none {
+			display: none;
+		}
+
+		.d-#{$breakpoint}-block {
+			display: block;
+		}
+	}
+}
+
+.sr-only,
+.screen-reader-text,
+.sr-only-focusable:not(:focus) {
+	@extend .absolute-element;
+
+	inline-size: 1px;
+	block-size: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0
+}
+
+.sr-only-focusable {
+	&:active,
+	&:focus {
+		@extend .static-element;
+
+		clip: auto;
+		inline-size: auto;
+		block-size: auto;
+		margin: 0;
+		overflow: visible;
+	}
+}

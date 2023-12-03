@@ -1,0 +1,289 @@
+/*--------------------------------------------------------------
+# c00 - Base - Structure
+--------------------------------------------------------------*/
+
+@use "utils" as *;
+@use "colors" as *;
+@use "../abstracts" as *;
+
+.h1, .h2, .h3, .h4, .h5,
+h1, h2, h3, h4, h5, h6 {
+	margin-block: 0 2em;
+}
+
+p, ul, ol, dl, table {
+	margin-block: 0 2.5em;
+}
+
+table, th, td {
+	border: 1px solid $border;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-block-width: 0.1rem 0;
+	border-inline-width: 0.1rem 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+th {
+	border-style: solid;
+	font-weight: 700;
+}
+
+th, td {
+	border-block-width: 0 0.1rem;
+	border-inline-width: 0 0.1rem;
+}
+
+address, blockquote {
+	font-style: italic;
+	margin-inline: 0;
+	margin-block: 0 2.5em;
+}
+
+td, th {
+	padding-block: 0.7em;
+	padding-inline: 0.7em;
+}
+
+dd {
+	margin-block-end: 1.5em;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+u {
+	text-decoration: underline;
+}
+
+i, em {
+	font-style: italic;
+}
+
+pre {
+	@extend .bgc-offset;
+
+	padding-block: 2em;
+	padding-inline: 2em;
+	margin-block-end: 2.5rem;
+}
+
+tt, code {
+	@extend .bgc-offset;
+
+	padding-block: 0.5em;
+	padding-inline: 0.5em;
+	border-radius: 0.4rem;
+}
+
+*:focus {
+	outline: none;
+}
+
+a, a:hover, a:focus, a:active,
+button, button:hover, button:focus, button:active {
+	text-decoration: none;
+}
+
+a:focus, a:active, a:hover {
+	outline: 0 none;
+}
+
+section, .section {
+	@extend .mb-full;
+
+	clear: both;
+	float: none;
+	width: 100%;
+}
+
+#colophon,
+.breadcrumb span,
+#page-title h1,
+.site-content {
+	@extend .relative-element;
+
+	overflow: hidden;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.clearfix {
+	zoom: 1;
+
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+p.site-description,
+section p:last-child,
+section ol:last-child,
+section ul:last-child {
+	@extend .mb-0;
+}
+
+.signature-preloader {
+	@extend .bgc-white;
+	@extend .fixed-element;
+
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	z-index: 999999;
+	inline-size: 100%;
+	block-size: 100%;
+	overflow: visible;
+}
+
+.preloader-inner {
+	@extend .absolute-element;
+
+	transform: translateY(-50%);
+	inset-block-start: 50%;
+	text-align: center;
+	inline-size: 100%;
+	block-size: auto;
+}
+
+.loader-ellipsis {
+	@extend .relative-element;
+
+	display: inline-block;
+	inline-size: 80px;
+	block-size: 80px;
+}
+
+.loader-ellipsis div {
+	@extend .absolute-element;
+	@extend .bgc-primary;
+
+	inset-block-start: 33px;
+	inline-size: 13px;
+	block-size: 13px;
+	border-radius: 50%;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader-ellipsis div:nth-child(1) {
+	inset-inline-start: 8px;
+	animation: loader-ellipsis1 0.6s infinite;
+}
+
+.loader-ellipsis div:nth-child(2) {
+	inset-inline-start: 8px;
+	animation: loader-ellipsis2 0.6s infinite;
+}
+
+.loader-ellipsis div:nth-child(3) {
+	inset-inline-start: 32px;
+	animation: loader-ellipsis2 0.6s infinite;
+}
+
+.loader-ellipsis div:nth-child(4) {
+	inset-inline-start: 56px;
+	animation: loader-ellipsis3 0.6s infinite;
+}
+
+@keyframes loader-ellipsis1 {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes loader-ellipsis2 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(24px, 0);
+	}
+}
+
+@keyframes loader-ellipsis3 {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+.innova-scroll-to-top {
+	@extend .bgc-primary;
+	@extend .color-white;
+	@extend .fixed-element;
+	@extend .d-none;
+
+	inset-inline-start: 20px;
+	inset-block-end: 25px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 999;
+	inline-size: 40px;
+	block-size: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+
+.signature-scroll-to-top {
+	::before,
+	&::after {
+		@extend .absolute-element;
+
+		content: "";
+		inset: 0 auto auto 0;
+		block-size: 100%;
+		inline-size: 100%;
+		display: block;
+	}
+
+	&::before {
+		opacity: 0;
+		z-index: 2;
+		transform: scale(1);
+	}
+
+	&::after {
+		@extend .bgc-secondary;
+
+		z-index: 1;
+		transform: scale(0);
+	}
+
+	i {
+		@extend .relative-element;
+		@extend .d-inline-block;
+
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		z-index: 10;
+		inline-size: 40px;
+		block-size: 40px;
+		text-align: center;
+		line-height: 40px;
+		transform: translate(0, 0);
+	}
+
+	&:hover {
+		i {
+			transform: translate(0, -40px);
+		}
+	}
+}

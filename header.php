@@ -2,12 +2,19 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all the <head> section and everything up until <div id="content">
+ * This is the template that displays all the <head> section and site header
+ * and starts <div id="wrapper">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package ThemeStarter\Signature
+ * @since   1.0.0
  */
+
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 use ThemeStarter\Signature\Common\Functions\Helpers;
 
@@ -28,8 +35,9 @@ use ThemeStarter\Signature\Common\Functions\Helpers;
 
 <body <?php body_class(); ?>>
 <?php sd_signature()->wpBodyOpen(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'signature' ); ?></a>
+
+<div id="page" class="<?php sd_signature()->pageClass(); ?>">
+	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'signature' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">

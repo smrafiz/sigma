@@ -292,4 +292,17 @@ class Functions extends Base {
 	public function wpBodyOpen() {
 		do_action( 'wp_body_open' );
 	}
+
+	/**
+	 * Page Classes.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
+	 */
+	public function pageClass() {
+		$classes = [ 'site' ];
+
+		echo esc_attr( implode( ' ', $classes ) );
+	}
 }

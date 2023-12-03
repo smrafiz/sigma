@@ -7,7 +7,7 @@
 .container,
 .container-fluid,
 .container-narrow {
-	width: 100%;
+	inline-size: 100%;
 	max-inline-size: 100%;
 	margin-inline-start: auto;
 	margin-inline-end: auto;
@@ -26,9 +26,15 @@
 }
 
 .container-fluid {
-	max-width: 100%;
+	max-inline-size: 100%;
 }
 
 .container-narrow {
-	max-width: map-get($containers, lg);
+	max-inline-size: map-get($containers, lg);
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat($columns, minmax(0, 1fr));
+	margin-inline: calc(-1 * $gutter_half);
 }

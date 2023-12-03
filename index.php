@@ -10,40 +10,57 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package ThemeStarter\Signature
+ * @since   1.0.0
  */
+
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 get_header();
 ?>
-	<main id="primary" class="container site-main">
-		<?php
-		if ( have_posts() ) {
-			if ( is_home() && ! is_front_page() ) {
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			}
+<div id="content" class="content-area">
+	<div class="container">
+		<div class="row">
+			<div class="col col--lg-8 col--xl-9">
+				<main id="primary" class="site-main">
+					<div id="posts-container" class="row">
+						<?php
+						if ( have_posts() ) {
 
-			/* Start the Loop */
-			while ( have_posts() ) {
-				the_post();
+							// The Loop template partial.
+							get_template_part( 'loop' );
+						} else {
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+							// Template partial for no content.
+							get_template_part( 'views/content/content', 'none' );
+						}
+						?>
+					</div>
 
-			}
-
-			the_posts_navigation();
-		} else {
-			get_template_part( 'template-parts/content', 'none' );
-		}
-		?>
-	</main><!-- #main -->
+					<div class="nav-container">
+						<?php
+						// Posts Pagination.
+						if ( 'classic' === get_theme_mod( 'innova_archive_pagination', 'classic' ) ) {
+							//innova_classic_pagination();
+						} else {
+							//innova_numbered_pagination();
+						}
+						?>
+					</div>
+				</main><!-- #primary -->
+			</div>
+			<div class="col col--lg-4 col--xl-3">
+				<aside id="secondary" class="widget-area">
+					<?php
+					get_sidebar();
+					?>
+				</aside><!-- #secondary -->
+			</div>
+		</div>
+	</div>
+</div><!-- #content -->
 <?php
 get_sidebar();
 get_footer();

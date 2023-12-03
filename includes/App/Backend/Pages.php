@@ -10,9 +10,9 @@
 
 declare( strict_types=1 );
 
-namespace ThemeStarter\SignatureCore\App\Backend;
+namespace ThemeStarter\Signature\App\Backend;
 
-use ThemeStarter\SignatureCore\Common\
+use ThemeStarter\Signature\Common\
 {
 	Abstracts\Base,
 	Traits\Singleton,

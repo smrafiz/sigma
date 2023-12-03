@@ -4,18 +4,23 @@
 
 @use '../abstracts' as *;
 
+.col {
+	grid-column: span $columns;
+	padding-inline: $gutter_half;
+}
+
 @each $breakpoint, $width in $breakpoints {
 	@if $breakpoint != 'xs' {
 		@include media-only($width) {
 			@for $i from 1 through $columns {
-				.col-#{$breakpoint}-#{$i} {
+				.col--#{$breakpoint}-#{$i} {
 					grid-column: span #{$i};
 				}
 			}
 		}
 	} @else {
 		@for $i from 1 through $columns {
-			.col-#{$breakpoint}-#{$i} {
+			.col--#{$breakpoint}-#{$i} {
 				grid-column: span #{$i};
 			}
 		}

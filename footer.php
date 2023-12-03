@@ -7,6 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package ThemeStarter\Signature
+ * @since   1.0.0
  */
 
 ?>
